@@ -1,12 +1,14 @@
-/**
- * 
- */
+/*var mainFunction = function(){
+      Ext.Msg.alert('Hi', 'Hello World Example');
+  };
+   Ext.onReady(mainFunction);*/
+var mainFunction =function(){
 
 Ext.create('Ext.form.Panel', {
     renderTo: document.body,
     title: 'Plan Change Form',
-    height: 150,
-    width: 300,
+    height: 400,
+    width: 600,
     bodyPadding: 10,
     defaultType: 'textfield',
     url :'',
@@ -35,7 +37,7 @@ Ext.create('Ext.form.Panel', {
         },
         
     ],
-buttons: [
+	buttons: [
           {
               text: 'Submit',
               handler: function() {
@@ -56,3 +58,5 @@ buttons: [
           }
       ]
 });
+}
+Ext.onReady(mainFunction);

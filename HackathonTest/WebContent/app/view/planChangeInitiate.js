@@ -99,17 +99,54 @@ Ext.onReady(function() {
 																}
 															});
 															
-														} else {
+														} 
+														else {
 															if (form.isValid()) { // make sure the form contains valid data before submitting
-															myForm.close();
-															//waitMsg: 'Saving..',
-															Ext.Msg.alert('Information', 'You have been redirected to pre confirmation page to validate the value which has been entered.');
-															callMyForm(true,
-																	formData);
-															}
-															else{
-																Ext.Msg.alert('Invalid Data', 'Please correct form errors.')
-															}
+																var oldPlanId=formData.OldPlanId;
+																var NewPlanId=formData.NewPlanId;
+																if(NewPlanId=='7652' || NewPlanId=='2132'){
+																	myForm.close();
+																    Ext.Msg.alert('Information', 'You have been redirected to pre confirmation page to validate the value which has been entered.');
+																	callMyForm(true,
+																			formData);
+																}
+																else{
+																	Ext.Ajax.request({
+																		url: './FlatFileWrite',
+																		method :'POST',
+																		waitMsg: 'submitting..',
+																		params: {
+																			oldPlanId: formData.OldPlanId,
+																			NewPlanId:formData.NewPlanId
+																		},
+																		success: function(response){
+																			var text = response.responseText;
+																			console.log(text);
+																			var oPin=Ext.JSON.decode(text).data[0].OPIN;
+																			//Ext.Msg.alert('OPIN Window', oPin);
+																			// process server response here
+																			Ext.Msg.show({
+																				title : 'Call Us',
+																				msg : 'Dear User,your one time passcode is '+ oPin +'. Kindly save this unique number and call us to serve you better on 1-200-400-600',
+																				width : 500,
+																				height :200,
+																				closable : false,
+																				buttons : Ext.Msg.OK,
+																				buttonText : 
+																				{
+																					OK : 'Okay',
+																				   
+																				}
+																			});
+																		}
+																	});
+																
+																}
+																	
+																	}
+																	else{
+																		Ext.Msg.alert('Invalid Data', 'Please correct form errors.')
+																	}
 														}
 													}
 												},

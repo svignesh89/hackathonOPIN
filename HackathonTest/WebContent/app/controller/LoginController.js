@@ -1,6 +1,7 @@
 Ext.define('MVC.controller.LoginController',{
 	extend:'Ext.app.Controller',
 	
+	
 	init: function(){		
 		 this.control({
 	            'mvc-LoginView > button#CheckLogin' : {
@@ -21,7 +22,8 @@ Ext.define('MVC.controller.LoginController',{
 	       {
 	    	 if(userName == 'testuser' && passWd == '12345')  
 	    		 {
-	    		    Ext.Msg.alert('Status', 'Logged in  successfully.');	    		    
+	    		    Ext.Msg.alert('Status', 'Logged in  successfully.');	
+	    		    Ext.getCmp('masterviewid').setActiveItem();
 	    		 }
 	    	 else
 	    		 {

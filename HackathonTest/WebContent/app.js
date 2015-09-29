@@ -5,12 +5,13 @@ Ext.application({
     views : [
        // 'Master',
         //'Detail'
-       'Login'
+       //'Login',
+       'RepScreen'
     ],
     
     controllers : [
         'Master',
-        'Detail','LoginController'
+        'Detail','LoginController','SearchController'
     ],
     
     stores : [
@@ -20,13 +21,14 @@ Ext.application({
     launch : function() {
         Ext.create('Ext.container.Viewport', {
             layout : {
-                type  : 'border'//,
+                type  : 'border',
+                //,
                // align : 'stretch'
             },
             
             items : [
                 { region: 'center',
-                    xtype : 'mvc-LoginView'// ,
+                    xtype : 'mvc-RepScreenView'// ,
               /*      flex  : 2
                 },
                 { 

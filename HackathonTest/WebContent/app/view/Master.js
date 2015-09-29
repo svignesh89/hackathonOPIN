@@ -1,7 +1,6 @@
 Ext.define('MVC.view.Master', {
     extend : 'Ext.grid.Panel',
     xtype  : 'mvc-MasterView',
-    
     title : 'Master Panel 4',
     
     store : 'People',

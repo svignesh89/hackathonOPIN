@@ -22,7 +22,7 @@ public class LoginDAO {
 		Connection con = ConnectionManager.getConnection();
 		List<LoginBean> loginList = new ArrayList<LoginBean>();		
 		String query = null;
-		query = "select * from Login";
+		query = "select * from login";
 		System.out.println("Query Login Fetch ---- " + query);
 		
 		try {

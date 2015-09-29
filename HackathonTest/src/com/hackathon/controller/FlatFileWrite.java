@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -47,6 +48,8 @@ public class FlatFileWrite extends HttpServlet {
 		String newPlanId = request.getParameter("newPlanId");
 		JSONObject jsonResponse = new JSONObject();
 		try {
+			JSONArray data = new JSONArray();
+			JSONObject jsonObj = new JSONObject();
 			String content = "This is the content to write into file";
 			Random ran = new Random();
 			int rnum = 100000 + ran.nextInt(900000);
@@ -73,10 +76,12 @@ public class FlatFileWrite extends HttpServlet {
 			
 			bw.close();
 			try {
-				//System.out.println("OPIN--- " + rnum);
+				System.out.println("OPIN-===- " + rnum);
 				
-				jsonResponse.put("OPIN", rnum);
-				response.getWriter().print(jsonResponse.toString());
+				jsonObj.put("OPIN", rnum);
+				data.put(jsonObj);
+				jsonResponse.put("data", data);
+				//response.getWriter().print(jsonResponse);
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

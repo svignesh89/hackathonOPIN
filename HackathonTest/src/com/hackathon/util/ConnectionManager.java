@@ -22,7 +22,7 @@ public class ConnectionManager {
 		java.sql.Connection connection = null;
 
 		try {
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Hackathon","root", "password");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/HackathonOPIN","root", "admin");
 
 		} catch (SQLException e) {
 			System.out.println("Connection Failed! Check output console");

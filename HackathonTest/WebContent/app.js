@@ -1,9 +1,11 @@
 Ext.application({
     name : 'MVC',
+    appFolder:'app',
     
     views : [
-        'Master',
-        'Detail'
+       // 'Master',
+        //'Detail'
+       'Login'
     ],
     
     controllers : [
@@ -12,24 +14,24 @@ Ext.application({
     ],
     
     stores : [
-        'People'
+        'People', 'LoginAs'
     ],
 
     launch : function() {
         Ext.create('Ext.container.Viewport', {
             layout : {
-                type  : 'hbox',
-                align : 'stretch'
+                type  : 'border'//,
+               // align : 'stretch'
             },
             
             items : [
-                { 
-                    xtype : 'mvc-MasterView' ,
-                    flex  : 2
+                { region: 'center',
+                    xtype : 'mvc-LoginView'// ,
+              /*      flex  : 2
                 },
                 { 
-                    xtype : 'mvc-DetailView',
-                    flex  : 1
+                    xtype : 'mvc-LoginView',
+                    flex  : 1*/
                 }
             ]
         });

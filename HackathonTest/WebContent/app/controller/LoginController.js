@@ -1,7 +1,6 @@
 Ext.define('MVC.controller.LoginController',{
 	extend:'Ext.app.Controller',
 	
-	
 	init: function(){		
 		 this.control({
 	            'mvc-LoginView > button#CheckLogin' : {
@@ -22,8 +21,21 @@ Ext.define('MVC.controller.LoginController',{
 	       {
 	    	 if(userName == 'testuser' && passWd == '12345')  
 	    		 {
-	    		    Ext.Msg.alert('Status', 'Logged in  successfully.');	
-	    		    Ext.getCmp('masterviewid').setActiveItem();
+	    		    //Ext.Msg.alert('Status', 'Logged in  successfully.');
+					Ext.MessageBox.show({
+							title: "Login Information",
+							msg: "Dear User,You have been successfully logged in. Kindly Click ok to proceed",
+							//icon: Ext.MessageBox.WARNING,
+							buttons: Ext.MessageBox.OK,
+							fn: function(buttonId) {
+								if (buttonId === "ok") {
+									window.location = 'index2.html';
+								}
+							}
+						});	
+				
+					//window.location = 'index2.html';
+	    		    
 	    		 }
 	    	 else
 	    		 {
@@ -32,6 +44,28 @@ Ext.define('MVC.controller.LoginController',{
 	       }
 	       else
 	    	   {
+				   if(userName == 'rep1' && passWd == 'pass1')  
+	    		 {
+	    		    //Ext.Msg.alert('Status', 'Logged in  successfully.');
+					Ext.MessageBox.show({
+							title: "Login Information",
+							msg: "Dear User,You have been successfully logged in. Kindly Click ok to proceed",
+							buttons: Ext.MessageBox.OK,
+							fn: function(buttonId) {
+								if (buttonId === "ok") {
+									//window.location = 'index3.html';
+									
+									 					}
+							}
+						});	
+				
+					//window.location = 'index2.html';
+	    		    
+	    		 }
+	    	 else
+	    		 {
+	    		 	Ext.Msg.alert('Status', 'Invalid Credentials');
+	    		 }
 	    	   
 	    	   }
 	}

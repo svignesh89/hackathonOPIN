@@ -5,8 +5,8 @@ Ext.application({
     views : [
        // 'Master',
         //'Detail'
-       //'Login',
-       'RepScreen'
+      'Login'
+       //'RepScreen'
     ],
     
     controllers : [
@@ -28,7 +28,7 @@ Ext.application({
             
             items : [
                 { region: 'center',
-                    xtype : 'mvc-RepScreenView'// ,
+                    xtype : 'mvc-LoginView'// ,
               /*      flex  : 2
                 },
                 { 

@@ -1,10 +1,9 @@
 Ext.define('MVC.view.Login', {
     extend : 'Ext.form.Panel',
-    xtype  : 'mvc-LoginView',
-    
+    xtype  : 'mvc-LoginView',    
     title   : 'Login Page',
     frame   : true,
-    padding : 10,
+    padding : 10,  
     
     items : [{
     	 name: 'LoginAsValue',
@@ -38,7 +37,7 @@ Ext.define('MVC.view.Login', {
         {
             xtype  : 'button',
             text   : 'Log in',
-            itemId : 'SaveRecord'
+            itemId : 'CheckLogin'            
         }
     ]
 });

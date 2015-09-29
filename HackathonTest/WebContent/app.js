@@ -10,7 +10,7 @@ Ext.application({
     
     controllers : [
         'Master',
-        'Detail'
+        'Detail','LoginController'
     ],
     
     stores : [

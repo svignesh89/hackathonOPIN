@@ -1,4 +1,4 @@
-package com.hackathon.controller;
+/*package com.hackathon.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,24 +17,24 @@ import com.hackathon.dao.LoginDAO;
 import com.hackathon.model.LoginBean;
 import com.mysql.jdbc.log.Log;
 
-/**
+*//**
  * Servlet implementation class LoginController
- */
+ *//*
 @WebServlet("/LoginController")
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
+    *//**
      * @see HttpServlet#HttpServlet()
-     */
+     *//*
     public LoginController() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
+	*//**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	 *//*
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
@@ -65,12 +65,13 @@ public class LoginController extends HttpServlet {
 		}
 	}
 
-	/**
+	*//**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	 *//*
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
 }
+*/
